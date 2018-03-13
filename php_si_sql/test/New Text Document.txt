@@ -1,0 +1,12 @@
+<?php
+		$tsq1 = "SELECT Nume1, Nume2 FROM Echipe WHERE Nume1 = 'Mercedes'";
+		$getResults = $conn->prepare($tsq1);
+		$getResults->execute();
+		$results = $getResults->fetchAll(PDO::FETCH_BOTH);
+		
+		foreach($results as $row){
+			echo $row['Nume1'].' '.$row['Nume2'];
+			echo '<br>';
+		}
+		
+	?>
